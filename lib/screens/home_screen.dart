@@ -10,10 +10,9 @@ class QuoteScreen extends StatefulWidget {
 }
 
 class _QuoteScreenState extends State<QuoteScreen> {
-
   int current_index = 0;
 
-  void _generate_quote(){
+  void _generate_quote() {
     setState(() {
       current_index = Random().nextInt(quotes.length);
     });
@@ -39,36 +38,37 @@ class _QuoteScreenState extends State<QuoteScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
-            Text(
-              quotes[current_index]["quote"]!,
-              style: TextStyle(
-                color: Colors.white54,
-                fontStyle: FontStyle.italic,
-                fontSize: 24,
+            children: [
+              Text(
+                quotes[current_index]["quote"]!,
+                style: TextStyle(
+                  color: Colors.white54,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 24,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              quotes[current_index]["author"]!,
-              style: TextStyle(fontSize: 18, color: Colors.grey[300]),
-            ),
-            SizedBox(height: 25),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber,
-                foregroundColor: Colors.black,
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10)
+              SizedBox(height: 20),
+              Text(
+                quotes[current_index]["author"]!,
+                style: TextStyle(fontSize: 18, color: Colors.grey[300]),
               ),
-              onPressed: () {
-                _generate_quote();
-                print(
-                  "------------Inspired You(CHAL CHAL CHAl.........)------------",
-                );
-              },
-              child: Text("Inspire ME!", style: TextStyle(fontSize: 20)),
-            ),
-          ],
+              SizedBox(height: 25),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  foregroundColor: Colors.black,
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                ),
+                onPressed: () {
+                  _generate_quote();
+                  print(
+                    "------------Inspired You(CHAL CHAL CHAl.........)------------",
+                  );
+                },
+                child: Text("Inspire ME!", style: TextStyle(fontSize: 20)),
+              ),
+            ],
+          ),
         ),
       ),
     );
