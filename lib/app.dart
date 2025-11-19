@@ -7,6 +7,7 @@ class Random_Quote_Gen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       color: Colors.blueGrey,
       title: "Random Quote Generator",
       home: QuoteScreen(),
