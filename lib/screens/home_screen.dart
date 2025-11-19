@@ -17,6 +17,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
       current_index = Random().nextInt(quotes.length);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,17 +41,20 @@ class _QuoteScreenState extends State<QuoteScreen> {
 
             children: [
               Text(
-                quotes[current_index]["quote"]!,
+                ' "${quotes[current_index]["quote"]!}" ',
                 style: TextStyle(
-                  color: Colors.white54,
+                  color: Colors.yellow,
                   fontStyle: FontStyle.italic,
                   fontSize: 24,
                 ),
               ),
               SizedBox(height: 20),
               Text(
-                quotes[current_index]["author"]!,
-                style: TextStyle(fontSize: 18, color: Colors.grey[300]),
+                '-- ${quotes[current_index]["author"]!} ',
+                style: TextStyle(fontSize: 18,
+                    color: Colors.yellow,
+                  fontWeight: FontWeight.w500
+                ),
               ),
               SizedBox(height: 25),
               ElevatedButton(
